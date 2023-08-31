@@ -21,6 +21,8 @@ while True:
         for id, lm in enumerate(results.pose_landmarks.landmark):
             h, w, c = img.shape
             print(id, lm)
+            cx, cy =int(lm.x*w), int(lm.y*h)
+            circle = cv.circle(img, (cx,cy), 5, (112,200,150), cv.FILLED)
 
 
     cTime = time.time()
